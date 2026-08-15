@@ -2136,8 +2136,8 @@ function resultsRoutineBegin(snapshot) {
     resultsMaxDurationReached = false;
     // update component parameters for each repeat
     // Run 'Begin Routine' code from code
-    corrData = trialmain.data["main_keyboard.corr"];
-    rtData = trialmain.data["main_keyboard.rt"];
+    corrData = psychoJS.experiment._trialsData.map(trial => trial["main_keyboard.corr"]);
+    rtData = psychoJS.experiment._trialsData.map(trial => trial["main_keyboard.rt"]);
     nCorrect = util.sum(corrData);
     nTrials = corrData.length;
     nWrong = (nTrials - nCorrect);
